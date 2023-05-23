@@ -1,1 +1,24 @@
-wesh
+Shop de produits High tech
+
+Ce que la BDD va avoir :
+Produits :
+    id produits
+    Catégorie de produits
+    URL pour l'image
+    Nom produits
+    Description produits
+    Marque entreprise (filtre)
+    stock produits
+
+
+Table de jointure 
+Panier :
+    id Utilisateurs
+    id produits
+    id Panier
+
+
+Utilisateurs :
+    id Utilisateurs
+    id Panier
+    login
