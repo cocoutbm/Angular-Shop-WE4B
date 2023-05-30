@@ -4,17 +4,22 @@ import { RouterModule, Routes } from '@angular/router';
 import { AppComponent } from './app.component'; 
 import { ProductListComponent } from './components/product-list/product-list.component';
 import { CartComponent } from './components/cart/cart.component';
+import { NavbarComponent } from './components/navbar/navbar.component';
+import { LoginPageComponent } from './login-page/login-page.component';
+import { SignupPageComponent } from './signup-page/signup-page.component';
+import { AppRoutingModule } from './app-routing.module';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     ProductListComponent,
-    CartComponent
+    CartComponent,
+    NavbarComponent,
+    LoginPageComponent,
+    SignupPageComponent
   ],
-  imports: [
-    BrowserModule,   
-  ],
+  imports: [BrowserModule, RouterModule,AppRoutingModule],
   providers: [],
   bootstrap: [AppComponent]
 })
