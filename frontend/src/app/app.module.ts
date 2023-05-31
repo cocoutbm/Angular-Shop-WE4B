@@ -6,8 +6,10 @@ import { ProductListComponent } from './components/product-list/product-list.com
 import { CartComponent } from './components/cart/cart.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { LoginPageComponent } from './login-page/login-page.component';
-import { SignupPageComponent } from './signup-page/signup-page.component';
 import { AppRoutingModule } from './app-routing.module';
+import { HomeComponent } from './components/home/home.component';
+import { HeaderComponent } from './components/header/header.component';
+import { SignupPageComponent } from './signup-page/signup-page.component';
 
 
 @NgModule({
@@ -17,9 +19,11 @@ import { AppRoutingModule } from './app-routing.module';
     CartComponent,
     NavbarComponent,
     LoginPageComponent,
-    SignupPageComponent
+    SignupPageComponent,
+    HomeComponent,
+    HeaderComponent
   ],
-  imports: [BrowserModule, RouterModule,AppRoutingModule],
+  imports: [BrowserModule, RouterModule, AppRoutingModule],
   providers: [],
   bootstrap: [AppComponent]
 })

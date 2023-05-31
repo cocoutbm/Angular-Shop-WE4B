@@ -1,12 +1,12 @@
 import { Component } from '@angular/core';
-import { Router, NavigationEnd } from '@angular/router';
+import { NavigationEnd, Router } from '@angular/router';
 
 @Component({
-  selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+  selector: 'app-home',
+  templateUrl: './home.component.html',
+  styleUrls: ['./home.component.css']
 })
-export class AppComponent {
+export class HomeComponent {
     // Variable pour afficher ou masquer le composant SignupComponent
     showSignupComponent: boolean = true;
 
@@ -20,5 +20,4 @@ export class AppComponent {
         }
       });
     }
-
 }
