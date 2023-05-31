@@ -1,0 +1,17 @@
+html,
+    body {
+      height: 100%;
+    }
+  
+    .custom-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100%;
+    }
+  
+    .custom-form {
+      border: 1px solid #000;
+      border-radius: 10px;
+      padding: 20px;
+    }
