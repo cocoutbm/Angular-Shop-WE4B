@@ -8,18 +8,27 @@ import { AuthentificationService } from '../services/authentification.service';
   styleUrls: ['./login-page.component.css']
 })
 export class LoginPageComponent {
-  email!: string;
-  password!: string;
+  email: string = '';
+  password: string = '';
+  error: string = '';
 
   constructor(private auth: AuthentificationService, private router: Router) {}
 
   login(): void {
-    if (this.auth.login(this.email, this.password)) {
-      // Redirection vers la page d'accueil
-      this.router.navigate(['/']);
-    } else {
-      // Afficher un message d'erreur ou effectuer une autre action en cas d'échec de la connexion
-    }
+    this.auth.login(this.email, this.password).subscribe(
+      success => {
+        if (success) {
+          this.router.navigate(['/']);
+          this.error = '';
+        } else {
+          this.error = 'Identifiants invalides';
+        }
+        console.log('Message d\'erreur :', this.error);
+      },
+      error => {
+        this.error = 'Une erreur s\'est produite lors de la connexion';
+        console.error('Erreur de connexion :', error);
+      }
+    );
   }
 }
-

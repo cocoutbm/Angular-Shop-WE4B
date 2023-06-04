@@ -28,7 +28,7 @@ import { ProfilComponent } from './profil/profil.component';
     HeaderComponent,
     ProfilComponent
   ],
-  imports: [BrowserModule, RouterModule, AppRoutingModule, FormsModule],
+  imports: [BrowserModule, RouterModule, AppRoutingModule, FormsModule,HttpClientModule],
   providers: [
     ProductService,
     HttpClientModule

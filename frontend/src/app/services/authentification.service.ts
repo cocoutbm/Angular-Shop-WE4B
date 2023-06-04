@@ -1,28 +1,49 @@
 import { Injectable } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
+import { Observable, map, switchMap } from 'rxjs';
+import { User } from '../models/user';
+import { of } from 'rxjs';
+
 
 @Injectable({
   providedIn: 'root'
 })
 export class AuthentificationService {
+  private apiUrl = 'assets/mydb.json';
+  private users: User[] = []; // Stocke les utilisateurs chargés depuis le fichier JSON
 
-  private loggedIn = false;
-
-  
-
-  login(email: string, password: string): boolean {
-    // Vérifiez les informations d'identification auprès de votre backend
-    if (email === 'email@example.com' && password === 'password') {
-      this.loggedIn = true;
-      return true;
-    }
-    return false;
+  constructor(private http: HttpClient) {
+    this.loadUsers(); // Charge les utilisateurs lors de l'initialisation du service
   }
 
+  private loadUsers(): Observable<any> {
+    return this.http.get<any>(this.apiUrl).pipe(
+      map(response => response.user)
+    );
+  }
+  
+  
+
+  login(email: string, password: string): Observable<boolean> {
+    return this.loadUsers().pipe(
+      switchMap(users => {
+        this.users = users;
+        const foundUser = this.users.find(user => user.email === email && user.password === password);
+        if (foundUser) {
+          localStorage.setItem('currentUser', JSON.stringify(foundUser));
+          return of(true);
+        }
+        return of(false);
+      })
+    );
+  }
+  
+
   logout(): void {
-    this.loggedIn = false;
+    localStorage.removeItem('currentUser');
   }
 
   isLoggedIn(): boolean {
-    return this.loggedIn;
+    return localStorage.getItem('currentUser') !== null;
   }
 }

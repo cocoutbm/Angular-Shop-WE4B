@@ -1,0 +1,28 @@
+{
+  "user" : [ 
+    {
+      "id" : 1,
+      "firstname" : "Aubin",
+      "lastname" : "Bonnefoy",
+      "username" : "aubin",
+      "email" : "aubin.bonnefoy@utbm.fr",
+      "password" : "mdpaubin"
+    },
+    {
+      "id" : 2,
+      "firstname" : "Corentin",
+      "lastname" : "Durupt",
+      "username" : "corentin",
+      "email" : "corentin.durupt@utbm.fr",
+      "password" : "mdpcorentin"
+    },
+    {
+      "id" : 3,
+      "firstname" : "s",
+      "lastname" : "s",
+      "username" : "s",
+      "email" : "s@s",
+      "password" : "s"
+    }
+  ]
+}
