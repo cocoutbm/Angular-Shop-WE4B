@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
+import { User } from '../models/user';
+import { UserService } from '../services/user.service';
 
 @Component({
   selector: 'app-signup-page',
@@ -8,10 +10,18 @@ import { Router } from '@angular/router';
 })
 export class SignupPageComponent {
 
-  constructor(private router: Router) {}
+  public user : User
+
+  constructor(private service: UserService, private router: Router) {
+    this.user = new User(this.service.users_length+1, "", "", "", "", "");
+  }
 
   createAccount() {
-    // Logique de création de compte
+    this.service.addUser(this.user).subscribe(data => {
+      this.user = data
+    })
+
+    this.router.navigateByUrl('/login')
 
     // Affichage du message de compte créé
     console.log('Compte créé avec succès !');

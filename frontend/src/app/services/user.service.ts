@@ -7,15 +7,25 @@ import { User } from '../models/user';
   providedIn: 'root'
 })
 export class UserService {
-  private apiUrl = 'assets/mydb.json';
+  user!: User
+  users_length!: number
 
   constructor(private http: HttpClient) {}
 
-  addUser(user: User): Observable<any> {
-    return this.http.post(this.apiUrl, { user });
+  getUsersLength() {
+    this.http.get<User[]>('http://localhost:3000/user').subscribe(data => {
+      this.users_length = (data).length
+    })
   }
 
-  getUsers(): Observable<User[]> {
-    return this.http.get<User[]>(this.apiUrl);
+  getUsersByIndex(user_id: number) {
+    this.http.get<User>('http://localhost:3000/user' + user_id).subscribe(data => {
+      this.user = data
+    })
+    return this.user
+  }
+
+  addUser(user: User): Observable<User> {
+    return this.http.post<User>('http://localhost:3000/user', user);
   }
 }
