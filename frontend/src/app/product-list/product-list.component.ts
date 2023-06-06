@@ -1,20 +1,20 @@
 import { Component } from '@angular/core';
-import { ProductListService } from '../services/product-list.service';
 import { Product } from '../models/product';
+import { ProductService } from '../services/product.service';
 
 @Component({
   selector: 'app-product-list',
   templateUrl: './product-list.component.html',
   styleUrls: ['./product-list.component.css'],
-  providers: [ProductListService] // service ProductListService au composant
+  providers: [ProductService] // service ProductListService au composant
 })
 export class ProductListComponent {
   products!: Product[];
 
-  constructor(private productListService: ProductListService) {}
+  constructor(private productService: ProductService) {}
 
   ngOnInit() {
-    this.products = this.productListService.getProducts();
+    this.products = this.productService.getProducts();
   }
 
   addToCart(product: Product) {
