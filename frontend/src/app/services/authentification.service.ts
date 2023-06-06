@@ -9,7 +9,7 @@ import { of } from 'rxjs';
   providedIn: 'root'
 })
 export class AuthentificationService {
-  private apiUrl = 'assets/mydb.json';
+  private apiUrl = 'http://localhost:3000/user';
   private users: User[] = []; // Stocke les utilisateurs chargés depuis le fichier JSON
 
   constructor(private http: HttpClient) {
@@ -21,8 +21,6 @@ export class AuthentificationService {
       map(response => response.user)
     );
   }
-  
-  
 
   login(email: string, password: string): Observable<boolean> {
     return this.loadUsers().pipe(

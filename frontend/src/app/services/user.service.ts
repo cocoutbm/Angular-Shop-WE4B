@@ -28,4 +28,13 @@ export class UserService {
   addUser(user: User): Observable<User> {
     return this.http.post<User>('http://localhost:3000/user', user);
   }
+
+  getPasswordByEmail(email: String): string {
+    this.http.get<User>('http://localhost:3000/user/' + email).subscribe(data => {
+      this.user = data
+    })
+    console.log(this.user.password)
+    return this.user.password
+  }
+
 }
