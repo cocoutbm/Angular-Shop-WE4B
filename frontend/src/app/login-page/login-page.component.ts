@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
-import { AuthentificationService } from '../services/authentification.service';
 import { UserService } from '../services/user.service';
 
 @Component({
@@ -13,31 +12,19 @@ export class LoginPageComponent {
   password: string = '';
   error: string = '';
 
-  constructor(private auth: AuthentificationService, private router: Router, private userService : UserService) {}
+  constructor(private router: Router, private userService : UserService) {}
 
   login(): void {
-    if(this.password === this.userService.getPasswordByEmail(this.email)){
-      console.log('success');
-    }else{
-      console.log('Message d\'erreur :');
-    }
 
-
-
-    /*this.auth.login(this.email, this.password).subscribe(
-      success => {
-        if (success) {
+    this.userService.getPasswordByEmail(this.email, user => {
+        if(this.password == user.password) {
+          localStorage.setItem('currentUser', JSON.stringify(user));
           this.router.navigate(['/']);
-          this.error = '';
+          console.log('success')
         } else {
-          this.error = 'Identifiants invalides';
+          console.log('error')
         }
-        console.log('Message d\'erreur :', this.error);
-      },
-      error => {
-        this.error = 'Une erreur s\'est produite lors de la connexion';
-        console.error('Erreur de connexion :', error);
-      }
-    );*/
+    });
+
   }
 }

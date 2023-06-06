@@ -29,12 +29,12 @@ export class UserService {
     return this.http.post<User>('http://localhost:3000/user', user);
   }
 
-  getPasswordByEmail(email: String): string {
-    this.http.get<User>('http://localhost:3000/user/' + email).subscribe(data => {
-      this.user = data
+
+  getPasswordByEmail(email: String, process: (user: User) => any) {
+    this.http.get<User[]>('http://localhost:3000/user?email=' + email).subscribe(data => {
+      this.user = data[0]
+      process(this.user)
     })
-    console.log(this.user.password)
-    return this.user.password
   }
 
 }
