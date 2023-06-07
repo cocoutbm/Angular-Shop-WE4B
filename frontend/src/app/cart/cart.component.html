@@ -1,1 +1,26 @@
-<p>cart works!</p>
+<div *ngIf="isLoggedIn(); else loginMessage">
+  <div class="container">
+    <h1>Mon Panier</h1>
+    <div *ngFor="let item of cartItems" class="card mb-3">
+      <div class="row g-0">
+        <div class="col-md-4">
+          <img [src]="item.image" alt="{{ item.name }}" class="img-fluid">
+        </div>
+        <div class="col-md-8">
+          <div class="card-body">
+            <h5 class="card-title">{{ item.name }}</h5>
+            <p class="card-text">{{ item.description }}</p>
+            <p class="card-text">Marque: {{ item.brand }}</p>
+            <p class="card-text">Prix: {{ item.price }} €</p>
+            <p class="card-text">Stock: {{ item.stock }}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+</div>
+
+<ng-template #loginMessage>
+  <p>Veuillez vous connecter à votre compte pour voir votre panier.</p>
+</ng-template>

@@ -31,6 +31,14 @@
       "username": "robert",
       "email": "sdfgertb",
       "password": "robert"
+    },
+    {
+      "id": 5,
+      "firstname": "s",
+      "lastname": "s",
+      "username": "s",
+      "email": "s@s",
+      "password": "s"
     }
   ],
   "product": [
@@ -64,8 +72,15 @@
       "stock": 799,
       "price": 529
     }
+  ],
+  "cart": [
+    {
+      "userID": 5,
+      "productID": 1
+    },
+    {
+      "userID": 5,
+      "productID": 2
+    }
   ]
 }
-
-      
-    

@@ -1,0 +1,21 @@
+<div class="col d-flex justify-content-center">
+    <div class="card mb-3" style="max-width: 540px;">
+        <div class="row no-gutters">
+            <div class="col-md-4">
+                <img src={{product.img}} class="card-img-top" alt="...">
+            </div>
+            <div class="col-md-8"></div>
+            <div class="card-body">
+                <h5 class="card-title">Title: {{product.title}}</h5>
+                <p class="card-text">Description: {{product.description}}</p>
+                <p class="card-text" *ngIf="product.price > 0; else freeBlock">Price : {{product.price}} $ </p>
+                <ng-template #freeBlock>
+                    <p class="card-text">Price: Free</p>p>
+                </ng-template>
+                <p class="card-text">Company: {{product.company}}</p>
+                <p class="card-text"><small class="text-muted">Likes: {{product.likes}}</small></p>
+            </div>
+        </div>
+        <div class="card-footer bg-transparent border-success">Footer</div>
+    </div>
+</div>

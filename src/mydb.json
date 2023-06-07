@@ -1,0 +1,24 @@
+{
+  "products": [
+    {
+      "id": 0,
+      "title": "Cubes",
+      "description": "This is a good Cube",
+      "price": 50,
+      "company": "UTBM",
+      "likes": 0,
+      "quantity": 0,
+      "img": "./assets/img/1.png"
+    },
+    {
+      "id": 1,
+      "title": "Cheese",
+      "description": "This is a good Cheese",
+      "price": 10,
+      "company": "CROUS",
+      "likes": 0,
+      "quantity": 0,
+      "img": "./assets/img/2.png"
+    }
+  ]
+}

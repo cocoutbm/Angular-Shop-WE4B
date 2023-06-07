@@ -1,17 +1,49 @@
+import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http'
+import { Observable, forkJoin, of, switchMap } from 'rxjs';
 import { Product } from '../models/product';
 
 @Injectable({
   providedIn: 'root'
 })
 export class ProductService {
+  private apiUrl = 'http://localhost:3000/product'; // URL de l'API pour les produits
 
-  getProducts(): Product[] {
-    return [
-      new Product(1, 'Smartphone', '../assets/images-produits/iphone-14.png', 'iPhone 14', 'Dernier modèle de smartphone Apple', 'Apple', 999,1099),
-      new Product(2, 'Ordinateur portable', '../assets/images-produits/macbook-pro.png', 'MacBook Pro', 'Ordinateur portable haut de gamme d’Apple', 'Apple', 1299,1999),
-      new Product(3, 'Tablette', '../assets/images-produits/ipad-pro.png', 'iPad Pro', 'Tablette professionnelle d’Apple', 'Apple', 799,529),
-    ];
+  constructor(private http: HttpClient) {}
+
+  getProducts(): Observable<Product[]> {
+    return this.http.get<Product[]>(this.apiUrl);
+  }
+
+  getProductsByUserId(userId: number): Observable<Product[]> {
+    return this.http.get<any[]>('http://localhost:3000/cart')
+      .pipe(
+        switchMap((cartItems) => {
+          const productIds = cartItems
+            .filter((item) => item.userID === userId)
+            .map((item) => item.productID);
+  
+          if (productIds.length === 0) {
+            return of([]);
+          }
+  
+          const requests = productIds.map((productId) =>
+            this.http.get<Product>(`http://localhost:3000/product/${productId}`)
+          );
+  
+          return forkJoin(requests);
+        })
+      );
+  }
+  
+
+  updateProduct(product: Product): Observable<Product> {
+    const url = this.apiUrl + '/' + product.productID;
+    return this.http.put<Product>(url, product);
+  }
+
+  getPrdByIndex(idx: number): Observable<Product> {
+    const url = this.apiUrl + '/' + idx;
+    return this.http.get<Product>(url);
   }
 }
