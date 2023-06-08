@@ -9,10 +9,10 @@ import { Product } from '../models/product';
 })
 export class CartComponent implements OnInit {
   public cartItems: Product[] = [];
+  private productIDs!: Number[];
 
   constructor(private productService: ProductService) {
-    console.log("tssest")
-    console.log(this.productService)
+    
   }
 
   isLoggedIn(): boolean {
@@ -21,16 +21,9 @@ export class CartComponent implements OnInit {
 
   ngOnInit() {
     if (this.isLoggedIn()) {
-      console.log("test");
-      this.productService.getProductsByUserId(5).subscribe(
-        (products: Product[]) => {
-          this.cartItems = products;
-        },
-        (error) => {
-          console.error('Failed to retrieve products:', error);
-        }
-      );
+      this.productService.getProductIdByUserId(5).subscribe(productIds => {
+        console.log(productIds) 
+      });
     }
   }
-  
 }
