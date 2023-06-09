@@ -14,6 +14,8 @@ import { ProductService } from './services/product.service';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { ProfilComponent } from './profil/profil.component';
+import { ProductComponent } from './product/product.component';
+import { ProductfullComponent } from './productfull/productfull.component';
 
 
 @NgModule({
@@ -26,7 +28,9 @@ import { ProfilComponent } from './profil/profil.component';
     SignupPageComponent,
     HomeComponent,
     HeaderComponent,
-    ProfilComponent
+    ProfilComponent,
+    ProductComponent,
+    ProductfullComponent
   ],
   imports: [BrowserModule, RouterModule, AppRoutingModule, FormsModule,HttpClientModule],
   providers: [

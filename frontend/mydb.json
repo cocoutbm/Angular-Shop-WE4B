@@ -43,44 +43,64 @@
   ],
   "product": [
     {
-      "productID": 1,
+      "id": 1,
       "category": "Smartphone",
+      "description": "Dernier modèle de smartphone Apple offrant une expérience haut de gamme avec des fonctionnalités avancées. Profitez d'une performance exceptionnelle, d'un écran de qualité et d'un design élégant.",
       "image": "../assets/images-produits/iphone-14.png",
       "name": "iPhone 14",
-      "description": "Dernier modèle de smartphone Apple",
       "brand": "Apple",
       "stock": 999,
       "price": 1099
     },
     {
-      "productID": 2,
+      "id": 2,
       "category": "Ordinateur portable",
-      "image": "../assets/images-produits/macbook-pro.png",
+      "description": "Le MacBook Pro est l'ordinateur portable phare d'Apple, conçu pour les professionnels exigeants. Avec sa puissance de traitement avancée, son écran Retina époustouflant et sa batterie longue durée, il répondra à tous vos besoins en matière de productivité.",
+      "image": "../assets/images-produits/macbook.jpg",
       "name": "MacBook Pro",
-      "description": "Ordinateur portable haut de gamme d’Apple",
       "brand": "Apple",
       "stock": 1299,
       "price": 1999
     },
     {
-      "productID": 3,
+      "id": 3,
       "category": "Tablette",
+      "description": "L'iPad Pro est une tablette professionnelle polyvalente offrant des performances exceptionnelles. Son écran Liquid Retina, sa compatibilité avec l'Apple Pencil et son puissant processeur en font l'outil idéal pour les créateurs et les utilisateurs exigeants.",
       "image": "../assets/images-produits/ipad-pro.png",
       "name": "iPad Pro",
-      "description": "Tablette professionnelle d’Apple",
       "brand": "Apple",
       "stock": 799,
       "price": 529
-    }
+    },
+    {
+      "id": 4,
+      "category": "Smartphone",
+      "description": "Le Samsung Galaxy S21 est le dernier modèle de smartphone de la marque Samsung. Avec son design élégant, son appareil photo de haute qualité et ses performances exceptionnelles, il offre une expérience utilisateur avancée pour les amateurs de technologie.",
+      "image": "../assets/images-produits/s21_family_kv_mo_img.webp",
+      "name": "Samsung Galaxy S21",
+      "brand": "Samsung",
+      "stock": 899,
+      "price": 899
+    },
+    {
+      "id": 5,
+      "category": "Ordinateur portable",
+      "description": "Le HP Spectre x360 est un ordinateur portable polyvalent offrant une combinaison parfaite de puissance, de portabilité et de style. Avec son écran tactile, sa charnière à 360 degrés et ses performances exceptionnelles, il est idéal pour les professionnels et les créatifs.",
+      "image": "../assets/images-produits/hp-spectre-x360-16-2022-1.jpg",
+      "name": "HP Spectre x360",
+      "brand": "HP",
+      "stock": 599,
+      "price": 1299
+    }  
   ],
   "cart": [
     {
-      "userID": 5,
-      "productID": 1
+      "userId": 1,
+      "productId": 1
     },
     {
-      "userID": 5,
-      "productID": 2
+      "userId": 1,
+      "productId": 2
     }
   ]
 }

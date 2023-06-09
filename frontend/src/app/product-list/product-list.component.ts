@@ -11,17 +11,13 @@ import { ProductService } from '../services/product.service';
 export class ProductListComponent implements OnInit {
   products: Product[] = [];
 
-  constructor(private productService: ProductService) {}
-
-  ngOnInit() {
-    this.getProducts();
+  constructor(private productService: ProductService) {
+    this.productService.getProducts().subscribe(data => {
+      this.products = data
+    })
   }
 
-  getProducts() {
-    this.productService.getProducts().subscribe((products: Product[]) => {
-      this.products = products;
-    });
-  }
+  ngOnInit() {}
 
   addToCart(product: Product) {
     console.log('Produit ajouté au panier :', product);

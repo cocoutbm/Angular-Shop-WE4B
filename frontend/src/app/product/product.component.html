@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+  <title>Liste des produits</title>  
+</head>
+<body>
+    <div class="container" (click)="readMore()">
+        <div class="card" style="width: 25rem; height: 26rem;">
+          <h5 class="card-title" style="text-align: center;">{{ product.name }}</h5>
+          <div class="ratio ratio-16x9">
+            <img class="card-img-top" [src]="product.image" alt="Product Image">
+          </div>
+          <div class="card-body">
+            <p class="card-text">Prix : {{ product.price }} €</p>
+            <p class="card-text">Marque : {{ product.brand }}</p>
+            <button class="btn btn-primary" (click)="addToCart(product)">Ajouter au panier</button>
+          </div>
+        </div>
+      </div>      
+</body>
+</html>
+
+

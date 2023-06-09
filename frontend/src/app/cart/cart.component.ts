@@ -8,8 +8,7 @@ import { Product } from '../models/product';
   styleUrls: ['./cart.component.css']
 })
 export class CartComponent implements OnInit {
-  public cartItems: Product[] = [];
-  private productIDs!: Number[];
+  public cartItems!: Product[];
 
   constructor(private productService: ProductService) {
     
@@ -20,10 +19,25 @@ export class CartComponent implements OnInit {
   }
 
   ngOnInit() {
-    if (this.isLoggedIn()) {
-      this.productService.getProductIdByUserId(5).subscribe(productIds => {
-        console.log(productIds) 
-      });
-    }
+    
   }
 }
+// export class CartComponent implements OnInit {
+//   public cartItems: Product[] = [];
+//   private productIDs!: Number[];
+
+//   constructor(private productService: ProductService) {
+    
+//   }
+
+//   isLoggedIn(): boolean {
+//     return localStorage.getItem('currentUser') !== null;
+//   }
+
+//   ngOnInit() {
+//     if (this.isLoggedIn()) {
+//       this.cartItems = this.productService.getProductByUserId(1)
+//       console.log(this.cartItems)
+//     }
+//   }
+// }

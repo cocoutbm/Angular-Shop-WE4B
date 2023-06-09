@@ -1,0 +1,17 @@
+<div class="d-flex align-items-center justify-content-center" style="height: 100vh;">
+    <div class="card text-center" style="width: 35rem; border-radius: 10px;">
+      <h5 class="card-title font-weight-bold" [ngClass]="{'fontColor size20 backgroundColor' : product.name.includes('C')}">{{product.brand}}</h5>
+      <img src="{{product.image}}" class="card-img-top w-100 h-auto" alt="...">
+      <div class="card-body">
+        <p class="card-text">{{product.description}}</p>
+      </div>
+      <div class="card-footer d-flex justify-content-between">
+        <strong><p class="card-text font-weight-bold" style="font-size: 24px;">{{product.price}} $</p></strong>
+        <button class="btn btn-primary">Ajouter au panier</button>
+      </div>
+    </div>
+  </div>
+  
+  
+  
+  
