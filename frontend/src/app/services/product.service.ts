@@ -41,10 +41,7 @@ export class ProductService {
 
   }
 
-  getProductById(id: number): Product {
-    this.http.get<Product>('http://localhost:3000/product/' + id).subscribe(data => {
-      this.product = data
-    })
-    return this.product
+  getProductById(id: number): Observable<Product> {
+    return this.http.get<Product>('http://localhost:3000/product/' + id);
   }
 }
