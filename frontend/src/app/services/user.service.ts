@@ -2,6 +2,8 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { User } from '../models/user';
+import { CartComponent } from '../cart/cart.component';
+import { Product } from '../models/product';
 
 @Injectable({
   providedIn: 'root'
@@ -9,8 +11,13 @@ import { User } from '../models/user';
 export class UserService {
   user!: User
   users_length!: number
+  user_id!: number
 
   constructor(private http: HttpClient) {}
+
+  setSessionId(id : number) {
+    this.user_id = id
+  }
 
   getUsersLength() {
     this.http.get<User[]>('http://localhost:3000/user').subscribe(data => {
@@ -35,6 +42,10 @@ export class UserService {
       this.user = data[0]
       process(this.user)
     })
+  }
+
+  logout(): void {
+    localStorage.removeItem('currentUser');
   }
 
 }

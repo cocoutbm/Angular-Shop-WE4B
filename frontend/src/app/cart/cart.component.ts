@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ProductService } from '../services/product.service';
 import { Product } from '../models/product';
+import { UserService } from '../services/user.service';
 
 @Component({
   selector: 'app-cart',
@@ -8,10 +9,12 @@ import { Product } from '../models/product';
   styleUrls: ['./cart.component.css']
 })
 export class CartComponent implements OnInit {
-  public cartItems!: Product[];
+  public cartItems: Product[] = [];
 
-  constructor(private productService: ProductService) {
+  constructor(private productService: ProductService, private user: UserService) {
     
+      this.cartItems = this.productService.getProductByUserId(user.user_id)
+  
   }
 
   isLoggedIn(): boolean {
@@ -19,25 +22,10 @@ export class CartComponent implements OnInit {
   }
 
   ngOnInit() {
-    
+  
+  }
+
+  clearCart(): void {
+    this.cartItems = [];
   }
 }
-// export class CartComponent implements OnInit {
-//   public cartItems: Product[] = [];
-//   private productIDs!: Number[];
-
-//   constructor(private productService: ProductService) {
-    
-//   }
-
-//   isLoggedIn(): boolean {
-//     return localStorage.getItem('currentUser') !== null;
-//   }
-
-//   ngOnInit() {
-//     if (this.isLoggedIn()) {
-//       this.cartItems = this.productService.getProductByUserId(1)
-//       console.log(this.cartItems)
-//     }
-//   }
-// }

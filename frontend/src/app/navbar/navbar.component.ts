@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import { NavigationEnd, Router } from '@angular/router';
+import { UserService } from '../services/user.service';
+import { CartComponent } from '../cart/cart.component';
 
 
 @Component({
@@ -9,11 +11,13 @@ import { NavigationEnd, Router } from '@angular/router';
 })
 export class NavbarComponent {
 
+  constructor(private userService : UserService){}
+
   isLoggedIn(): boolean {
     return localStorage.getItem('currentUser') !== null;
   }
 
   logout(): void {
-    localStorage.removeItem('currentUser');
+    this.userService.logout()
   }
 }

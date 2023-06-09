@@ -21,6 +21,7 @@ export class LoginPageComponent {
           localStorage.setItem('currentUser', JSON.stringify(user));
           this.router.navigate(['/']);
           console.log('success')
+          this.userService.setSessionId(user.id)
         } else {
           console.log('error')
         }
