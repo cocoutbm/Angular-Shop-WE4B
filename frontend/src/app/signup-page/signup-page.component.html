@@ -42,6 +42,19 @@
         </div>
       </div>
       <br>
+      <div class="form-check">
+        <input class="form-check-input" type="radio" name="fonctionnalite" value="acheteur" id="fonctionnalite1" [(ngModel)]="user.fonctionnalite">
+        <label class="form-check-label" for="fonctionnalite1">
+          Acheteur (l'acheteur ne peut qu'acheter sur le site)
+        </label>
+      </div>
+      <div class="form-check">
+        <input class="form-check-input" type="radio" name="fonctionnalite" value="vendeur" id="fonctionnalite2" [(ngModel)]="user.fonctionnalite" checked>
+        <label class="form-check-label" for="fonctionnalite2">
+          Vendeur (le vendeur peut à la fois achter mais poster des produits pour les vendre)
+        </label>
+      </div>
+      <br>
       <div class="mb-3 row">
         <div class="justify-content-center text-center">
           <button type="submit" class="btn btn-primary" (click)="createAccount()">Créer</button>

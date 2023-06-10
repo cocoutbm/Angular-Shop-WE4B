@@ -13,12 +13,13 @@ export class SignupPageComponent {
   public user : User
 
   constructor(private service: UserService, private router: Router) {
-    this.user = new User(this.service.users_length+1, "", "", "", "", "");
+    this.user = new User(this.service.users_length+1, "", "", "", "", "", "");
   }
 
   createAccount() {
     this.service.addUser(this.user).subscribe(data => {
       this.user = data
+      console.log(this.user)
     })
 
     this.router.navigateByUrl('/login')

@@ -6,7 +6,8 @@
       "lastname": "Bonnefoy",
       "username": "aubin",
       "email": "aubin.bonnefoy@utbm.fr",
-      "password": "mdpaubin"
+      "password": "mdpaubin",
+      "fonctionnalite": "vendeur"
     },
     {
       "id": 2,
@@ -14,7 +15,8 @@
       "lastname": "Durupt",
       "username": "corentin",
       "email": "corentin.durupt@utbm.fr",
-      "password": "mdpcorentin"
+      "password": "mdpcorentin",
+      "fonctionnalite": "vendeur"
     },
     {
       "id": 3,
@@ -22,7 +24,8 @@
       "lastname": "dupont",
       "username": "toto90",
       "email": "toto@mail.com",
-      "password": "azerty"
+      "password": "azerty",
+      "fonctionnalite": "acheteur"
     },
     {
       "id": 4,
@@ -30,7 +33,8 @@
       "lastname": "Hakobyan",
       "username": "robert",
       "email": "sdfgertb",
-      "password": "robert"
+      "password": "robert",
+      "fonctionnalite": "acheteur"
     },
     {
       "id": 5,
@@ -38,7 +42,17 @@
       "lastname": "s",
       "username": "s",
       "email": "s@s",
-      "password": "s"
+      "password": "s",
+      "fonctionnalite": "acheteur"
+    },
+    {
+      "id": 6,
+      "firstname": "charles",
+      "lastname": "leclerc",
+      "username": "chacha",
+      "email": "c.leclerc@monaco.fr",
+      "password": "123456",
+      "fonctionnalite": "vendeur"
     }
   ],
   "product": [
@@ -91,7 +105,7 @@
       "brand": "HP",
       "stock": 599,
       "price": 1299
-    }  
+    }
   ],
   "cart": [
     {

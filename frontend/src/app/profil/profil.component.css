@@ -1,0 +1,19 @@
+#profil-info {
+    margin: 0;
+    width: 75%;
+}
+
+.profil-info-perso {
+    margin-top: 15px;
+    margin-bottom: 30px;
+    margin-left: 15px;
+    margin-right: 0;
+    width: 75%;
+}
+
+#bouton-vendre {
+    position: absolute;
+    left: 90%;
+}
+
+

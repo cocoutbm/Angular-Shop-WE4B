@@ -1,1 +1,23 @@
-<p>profil works!</p>
+<div class="profil-container">
+    <br>
+    <div id="profil-info">
+        <div class="profil-info-perso">
+            <h5>Nom : {{currentUser.lastname}} </h5>
+        </div>
+        <div class="profil-info-perso">
+            <h5>Prénom : {{currentUser.firstname}}</h5>
+        </div>
+        <div class="profil-info-perso">
+            <h5>Username : {{currentUser.username}}</h5>
+        </div>
+        <div class="profil-info-perso">
+            <h5>Mail : {{currentUser.email}}</h5>
+        </div>
+        <div class="profil-info-perso">
+            <h5>Fonctionnalité : {{currentUser.fonctionnalite}}</h5>
+        </div>
+        <div id="bouton-vendre" *ngIf="currentUser.fonctionnalite === 'vendeur'">
+            <button>Vendre un Produit</button>
+        </div>
+    </div>
+</div>

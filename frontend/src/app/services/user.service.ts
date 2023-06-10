@@ -36,7 +36,6 @@ export class UserService {
     return this.http.post<User>('http://localhost:3000/user', user);
   }
 
-
   getPasswordByEmail(email: String, process: (user: User) => any) {
     this.http.get<User[]>('http://localhost:3000/user?email=' + email).subscribe(data => {
       this.user = data[0]
