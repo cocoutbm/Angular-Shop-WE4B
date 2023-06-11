@@ -22,7 +22,7 @@ export class CartComponent implements OnInit {
   }
 
   ngOnInit() {
-  
+      
   }
 
   clearCart(): void {

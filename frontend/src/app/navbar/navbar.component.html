@@ -10,9 +10,15 @@
       <li class="nav-item">
         <a class="nav-link" routerLink="/cart">Panier</a>
       </li>
+      
+      <!-- Ajouter la section "Vendre" uniquement si l'utilisateur est un vendeur -->
+      <li class="nav-item" *ngIf="currentUser.fonctionnalite === 'vendeur'">
+        <a class="nav-link" routerLink="/vendre">Vendre</a>
+      </li>
+      
     </ul>
     <ul class="navbar-nav ml-auto">
-      <li class="nav-item" *ngIf="!isLoggedIn()">
+      <li class="nav-item">
         <a class="nav-link btn-link" routerLink="/login">Se connecter</a>
       </li>
       <li class="nav-item" *ngIf="!isLoggedIn()">
@@ -24,4 +30,3 @@
     </ul>
   </div>
 </nav>
-

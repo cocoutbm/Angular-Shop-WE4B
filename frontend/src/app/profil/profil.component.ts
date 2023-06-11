@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { User } from '../models/user';
+import { UserService } from '../services/user.service';
 
 @Component({
   selector: 'app-profil',
@@ -17,6 +18,7 @@ export class ProfilComponent implements OnInit{
       //converstion des données du user sous forme de chaine de caractère en objet
       this.currentUser = JSON.parse(userString)
     }
-  }
+  }                                       
+
 
 }

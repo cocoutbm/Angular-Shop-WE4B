@@ -1,7 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Observable, forkJoin, of, switchMap } from 'rxjs';
-import { map } from 'rxjs/operators';
+import { Observable} from 'rxjs';
 import { Product } from '../models/product';
 import { Cart } from '../models/cart';
 
@@ -20,6 +19,8 @@ export class ProductService {
   }
 
   getProductByUserId(userId: number): Product[] {
+
+    this.products = []; 
     this.http.get<Cart[]>('http://localhost:3000/cart?userId=' + userId).subscribe(productids => {
       productids.forEach(element => {
         this.http.get<Product>('http://localhost:3000/product/' + element.productId).subscribe(prd => {
@@ -27,11 +28,20 @@ export class ProductService {
         });
       })
     }
-  )
+  ) 
     return this.products
   }
 
   getProductById(id: number): Observable<Product> {
     return this.http.get<Product>('http://localhost:3000/product/' + id);
   }
+  addToCart(productId: number, userId: number): Observable<Cart> {
+    const cartItem: Cart = {
+      productId: productId,
+      userId: userId
+    };
+    return this.http.post<Cart>('http://localhost:3000/cart', cartItem);
+  }
+  
+  
 }
