@@ -16,6 +16,7 @@ import { FormsModule } from '@angular/forms';
 import { ProfilComponent } from './profil/profil.component';
 import { ProductComponent } from './product/product.component';
 import { ProductfullComponent } from './productfull/productfull.component';
+import { VendreComponent } from './vendre/vendre.component';
 
 
 @NgModule({
@@ -30,7 +31,8 @@ import { ProductfullComponent } from './productfull/productfull.component';
     HeaderComponent,
     ProfilComponent,
     ProductComponent,
-    ProductfullComponent
+    ProductfullComponent,
+    VendreComponent
   ],
   imports: [BrowserModule, RouterModule, AppRoutingModule, FormsModule,HttpClientModule],
   providers: [
