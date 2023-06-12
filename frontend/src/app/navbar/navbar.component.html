@@ -12,7 +12,8 @@
       </li>
       
       <!-- Ajouter la section "Vendre" uniquement si l'utilisateur est un vendeur -->
-      <li class="nav-item" *ngIf="currentUser.fonctionnalite === 'vendeur'">
+      <li class="nav-item">
+        <!-- <li class="nav-item" *ngIf="currentUser.fonctionnalite === 'vendeur'"></li> -->
         <a class="nav-link" routerLink="/vendre">Vendre</a>
       </li>
       

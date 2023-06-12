@@ -30,7 +30,7 @@ export class NavbarComponent implements OnInit {
 
   logout(): void {
     this.userService.logout();
-    
+   
   }
   
 }

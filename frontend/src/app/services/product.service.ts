@@ -35,8 +35,9 @@ export class ProductService {
   getProductById(id: number): Observable<Product> {
     return this.http.get<Product>('http://localhost:3000/product/' + id);
   }
+  
   addToCart(productId: number, userId: number): Observable<Cart> {
-    const cartItem: Cart = {
+    const cartItem: Cart = {                                      
       productId: productId,
       userId: userId
     };

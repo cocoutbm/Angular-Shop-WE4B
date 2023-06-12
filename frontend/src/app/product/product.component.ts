@@ -26,8 +26,9 @@ export class ProductComponent implements OnInit{
   }
 
   addToCart() {
-    const userId = 1; // ID de l'utilisateur à utiliser pour le test
-    const productId = 5; // Assurez-vous d'avoir défini correctement this.product.id
+    //normalement on récupere user id avec le service user et product id avec la varible presente dans la classe 
+    const userId = 1; //juste je test avec des donnée en brut jsp pk ça marche pas 
+    const productId = 5; 
   
     if (userId) {
       this.service.addToCart(productId, userId).subscribe(() => {
