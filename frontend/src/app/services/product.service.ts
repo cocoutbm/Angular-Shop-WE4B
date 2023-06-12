@@ -11,6 +11,8 @@ export class ProductService {
   private apiUrl = 'http://localhost:3000/product'; // URL de l'API pour les produits
   private productIds!: number[];
   private products: Product[] = [];
+  list_length! : number
+  cart_length! : number
 
   constructor(private http: HttpClient) { }
 
@@ -36,12 +38,24 @@ export class ProductService {
     return this.http.get<Product>('http://localhost:3000/product/' + id);
   }
   
-  addToCart(productId: number, userId: number): Observable<Cart> {
-    const cartItem: Cart = {                                      
-      productId: productId,
-      userId: userId
-    };
-    return this.http.post<Cart>('http://localhost:3000/cart', cartItem);
+  addToCart(cart: Cart): Observable<Cart> {
+    return this.http.post<Cart>('http://localhost:3000/cart', cart);
+  }
+
+  getDataLength(){
+    this.http.get<Product[]>('http://localhost:3000/product').subscribe( data => {
+      this.list_length = (data).length
+    })
+  }
+
+  addProduct(product : Product): Observable<Product>{
+    return this.http.post<Product>('http://localhost:3000/product', product)
+  }
+
+  getCartDataLength(){
+    this.http.get<Product[]>('http://localhost:3000/cart').subscribe( data => {
+      this.cart_length = (data).length
+    })
   }
   
   

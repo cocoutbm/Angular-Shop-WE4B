@@ -16,7 +16,6 @@ export class ProductfullComponent implements OnInit{
 
     constructor(private activatedroute : ActivatedRoute, private service: ProductService){
       this.product_id = parseInt(this.activatedroute.snapshot.paramMap.get('id') || '0')
-      console.log(this.product)
     }
 
     ngOnInit(): void {

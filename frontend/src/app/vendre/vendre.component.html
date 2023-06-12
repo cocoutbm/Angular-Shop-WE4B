@@ -2,21 +2,11 @@
     <div class="row justify-content-center">
       <div class="col-sm-6">
         <form>
-          <h2>{{ title }}</h2>
+          <h2>Proposer un article à vendre</h2>
   
           <div class="mb-3">
             <label for="product-name">Nom du produit :</label>
-            <input type="text" class="form-control" id="product-name" [(ngModel)]="productName" placeholder="Entrez le nom du produit" />
-          </div>
-  
-          <div class="text-center">
-            <button type="submit" class="btn btn-primary" >Proposer à vendre</button>
-          </div>
-  
-          <br /><br /><br /><br /><br />
-  
-          <div class="text-center">
-            <h1>Mettre en ligne un produit</h1>
+            <input type="text" class="form-control" id="product-name" [(ngModel)]="product.name" placeholder="Entrez le nom du produit" />
           </div>
   
           <div class="mb-3">
@@ -31,12 +21,12 @@
   
           <div class="mb-3">
             <label for="product-image" class="form-label">Image</label>
-            <input type="text" class="form-control" id="product-image" [(ngModel)]="product.image" name="image" placeholder="Entrez le lien vers l'image">
+            <input type="file" class="form-control" id="product-image" placeholder="Sélectionnez une image">
           </div>
   
           <div class="mb-3">
-            <label for="product-name" class="form-label">Nom du produit</label>
-            <input type="text" class="form-control" id="product-name" [(ngModel)]="product.name" name="name" placeholder="Entrez le nom du produit">
+            <label for="product-name" class="form-label">Stock Disponible</label>
+            <input type="number" class="form-control" id="product-name" [(ngModel)]="product.stock" name="name" placeholder="Entrez le nom du produit">
           </div>
   
           <div class="mb-3">
@@ -51,7 +41,7 @@
           </div>
   
           <div class="text-center">
-            <button type="submit" class="btn btn-primary">Mettre en ligne</button>
+            <button type="submit" class="btn btn-primary" (click)="addProduct()" class="nav-link" routerLink="/">Mettre en ligne</button>
           </div>
         </form>
       </div>

@@ -13,36 +13,25 @@ import { User } from '../models/user';
   styleUrls: ['./product.component.css'],
 })
 export class ProductComponent implements OnInit{
-  userId : number
 
   @Input() product! : Product
+  cart! : Cart
 
-  constructor (private routeur: Router, private service: ProductService,private user: UserService){
-     this.userId = this.user.user_id;
+  constructor (private routeur: Router, private productService: ProductService,private userService: UserService){
   }
 
   ngOnInit(): void {
-      
+      this.productService.getCartDataLength()
+      this.cart = new Cart(this.productService.cart_length, this.userService.user_id, this.product.id)
   }
 
   addToCart() {
-    //normalement on récupere user id avec le service user et product id avec la varible presente dans la classe 
-    const userId = 1; //juste je test avec des donnée en brut jsp pk ça marche pas 
-    const productId = 5; 
-  
-    if (userId) {
-      this.service.addToCart(productId, userId).subscribe(() => {
-        console.log('Produit ajouté au panier avec succès !');
-      }, error => {
-        console.error('Erreur lors de l\'ajout du produit au panier :', error);
-      });
-    } else {
-      console.error('ID utilisateur introuvable.');
-    }
+      this.productService.addToCart(this.cart).subscribe(data => {
+        this.cart = data
+      })
+
   }
   
-  
-
   readMore(){
     this.routeur.navigate(['/', 'product', this.product.id])
   }

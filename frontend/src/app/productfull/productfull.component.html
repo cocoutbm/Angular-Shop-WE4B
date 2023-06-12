@@ -1,8 +1,8 @@
 
 <div class="d-flex align-items-center justify-content-center">
   <div class="card text-center" style="width: 35rem; border-radius: 10px;">
-    <h5 class="card-title font-weight-bold" [ngClass]="{'fontColor size20 backgroundColor' : product.name.includes('C')}">{{product.brand}}</h5>
-    <img src="{{product.image}}" class="card-img-top w-100 h-auto" alt="...">
+    <h5 class="card-title font-weight-bold">{{product.brand}}</h5>
+    <img [src]="product.image" class="card-img-top w-100 h-auto" alt="...">
     <div class="card-body">
       <p class="card-text">{{product.description}}</p>
     </div>

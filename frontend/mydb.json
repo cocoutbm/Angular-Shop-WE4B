@@ -109,20 +109,39 @@
   ],
   "cart": [
     {
+      "id": 1,
       "userId": 1,
       "productId": 1
     },
     {
+      "id": 2,
       "userId": 1,
       "productId": 2
     },
     {
+      "id": 3,
       "userId": 2,
       "productId": 3
     },
     {
+      "id": 4,
       "userId": 2,
       "productId": 5
+    },
+    {
+      "userId": 2,
+      "productId": 1,
+      "id": 5
+    },
+    {
+      "userId": 2,
+      "productId": 2,
+      "id": 6
+    },
+    {
+      "userId": 1,
+      "productId": 3,
+      "id": 7
     }
   ]
 }

@@ -7,7 +7,7 @@
   <title>Liste des produits</title>  
 </head>
 <body>
-    <div class="container" (click)="readMore()">
+    <div class="container">
         <div class="card" style="width: 25rem; height: 26rem;">
           <h5 class="card-title" style="text-align: center;">{{ product.name }}</h5>
           <div class="ratio ratio-16x9">
@@ -16,6 +16,7 @@
           <div class="card-body">
             <p class="card-text">Prix : {{ product.price }} €</p>
             <p class="card-text">Marque : {{ product.brand }}</p>
+            <button class="btn btn-primary mr-3" (click)="readMore()">Voir Produit</button>
             <button class="btn btn-primary" (click)="addToCart()">Ajouter au panier</button>
           </div>
         </div>
