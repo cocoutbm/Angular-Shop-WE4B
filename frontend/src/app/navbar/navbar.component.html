@@ -12,12 +12,10 @@
       </li>
       
       <!-- Ajouter la section "Vendre" uniquement si l'utilisateur est un vendeur -->
-      <li class="nav-item" *ngIf="isVendeur()">
+      <li class="nav-item" *ngIf="isVendeur==true">
         <a class="nav-link" routerLink="/vendre">Vendre</a>
       </li>
-      <!--<li class="nav-item">
-        <a class="nav-link" routerLink="/vendre">Vendre</a>
-      </li> -->
+      
       <div class="container">
         <form class="form-inline" action="/recherche/" method="get">
           <fieldset>    

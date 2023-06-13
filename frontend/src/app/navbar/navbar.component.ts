@@ -12,31 +12,31 @@ import { User } from '../models/user';
 })
 export class NavbarComponent implements OnInit {
   user!: string
-  currentUser: any 
+  isVendeur!: boolean
+  currentUser!: User
   constructor(private userService : UserService){ 
+
+    var currentUserString = localStorage.getItem('currentUser');
+    if (currentUserString !== null) {
+      this.currentUser = JSON.parse(currentUserString);
+      if(this.currentUser!== null){
+        if(this.currentUser.fonctionnalite==='vendeur'){
+          this.isVendeur=true;
+        } else {
+          this.isVendeur = false;
+        }
+      }
+    }
+    
   }
 
   ngOnInit(): void {
-    console.log(localStorage.getItem('currentUser'))
-    //récupération du user connecté dans le localStorage du navigateur
-    const userString = localStorage.getItem('currentUser')
-    if(userString){
-      //converstion des données du user sous forme de chaine de caractère en objet
-      this.currentUser = JSON.parse(userString)
-    }
   }
 
   isLoggedIn(): boolean {
     return localStorage.getItem('currentUser') !== null;
   }
 
-  // Voir pour ajouter un moyen de récupérer le currentUser en user car là ca récupère le tableau entier
-  isVendeur(): void {
-    if (localStorage.getItem('currentUser') !== null){
-      localStorage.setItem(this.user, JSON.stringify('currentUser'));
-      console.log()
-    }
-  }
 
   logout(): void {
     this.userService.logout();
