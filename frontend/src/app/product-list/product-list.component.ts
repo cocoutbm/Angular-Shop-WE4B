@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Product } from '../models/product';
 import { ProductService } from '../services/product.service';
 
+
 @Component({
   selector: 'app-product-list',
   templateUrl: './product-list.component.html',
@@ -9,6 +10,7 @@ import { ProductService } from '../services/product.service';
   providers: [ProductService] // Service ProductService dans le composant
 })
 export class ProductListComponent implements OnInit {
+  searchText:any;
   products: Product[] = [];
 
   constructor(private productService: ProductService) {

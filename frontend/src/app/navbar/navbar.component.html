@@ -15,24 +15,8 @@
       <li class="nav-item" *ngIf="isVendeur==true">
         <a class="nav-link" routerLink="/vendre">Vendre</a>
       </li>
-      
-      <div class="container">
-        <form class="form-inline" action="/recherche/" method="get">
-          <fieldset>    
-            <div class="input-group">
-              <div class="input-group-prepend">
-                <select id="oCategorie" name="oCategorie" class="form-control">
-                  <option selected="selected" value="0">Catégorie</option>
-                  <option value="1">...</option>
-                </select>
-              </div>
-              <input id="oSaisie" name="oSaisie" type="text" class="form-control" aria-label="Saisie de mots clés" required="required">
-            </div>
-          </fieldset> 
-        </form>
-      </div>
-
     </ul>
+    
     <ul class="navbar-nav ml-auto">
       <li class="nav-item" *ngIf="!isLoggedIn()">
         <a class="nav-link btn-link" routerLink="/login">Se connecter</a>

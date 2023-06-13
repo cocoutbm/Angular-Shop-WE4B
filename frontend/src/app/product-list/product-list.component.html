@@ -1,16 +1,15 @@
 <br><br><br>
 <div class="container d-flex justify-content-center">
+  <div calss="search-product">
+      <input type="text" name="search" [(ngModel)]="searchText" placeholder="Search by name or brand">
+  </div>
+  
   <div class="row">
-    <ng-container *ngFor="let product of products; let i = index;">
+    <ng-container *ngFor="let product of products | filter:searchText">
       <div class="col-md-5 mb-4">
         <app-product [product]="product"></app-product>
       </div>
     </ng-container>
   </div>
 </div>
-
-
-
-
-
 

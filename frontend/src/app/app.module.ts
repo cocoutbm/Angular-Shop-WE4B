@@ -17,6 +17,7 @@ import { ProfilComponent } from './profil/profil.component';
 import { ProductComponent } from './product/product.component';
 import { ProductfullComponent } from './productfull/productfull.component';
 import { VendreComponent } from './vendre/vendre.component';
+import { FilterPipe } from './filter.pipe';
 
 
 @NgModule({
@@ -32,7 +33,8 @@ import { VendreComponent } from './vendre/vendre.component';
     ProfilComponent,
     ProductComponent,
     ProductfullComponent,
-    VendreComponent
+    VendreComponent,
+    FilterPipe,
   ],
   imports: [BrowserModule, RouterModule, AppRoutingModule, FormsModule,HttpClientModule],
   providers: [
