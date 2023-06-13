@@ -51,5 +51,5 @@ export class UserService {
   logout(): void {
     localStorage.removeItem('currentUser');
   }
-
+  
 }
