@@ -40,6 +40,7 @@ export class ProductService {
   }
   
   addToCart(cart: Cart): Observable<Cart> {
+    console.log(cart)
     return this.http.post<Cart>('http://localhost:3000/cart', cart);
   }
 
@@ -53,15 +54,14 @@ export class ProductService {
     return this.http.post<Product>('http://localhost:3000/product', product)
   }
 
-  getDatabyBrand(brand: Brand): Observable<Product[]> {
-    return this.http.get<Product[]>('http://localhost:3000/product?brand='+ brand.name)
-  }
-
   getCartDataLength(){
     this.http.get<Product[]>('http://localhost:3000/cart').subscribe( data => {
       this.cart_length = (data).length
     })
   }
-  
+
+  getDatabyBrand(brand: Brand): Observable<Product[]> {
+    return this.http.get<Product[]>('http://localhost:3000/product?brand='+ brand.name)
+  }
   
 }

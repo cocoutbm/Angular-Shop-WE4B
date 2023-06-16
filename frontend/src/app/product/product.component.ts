@@ -30,7 +30,6 @@ export class ProductComponent implements OnInit{
       this.productService.addToCart(this.cart).subscribe(data => {
         this.cart = data
       })
-
   }
   
   readMore(){

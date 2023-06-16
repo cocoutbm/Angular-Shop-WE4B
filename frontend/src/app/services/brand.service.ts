@@ -3,6 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { User } from '../models/user';
 import { Brand } from '../models/brand';
+import { Product } from '../models/product';
 
 
 @Injectable({
@@ -25,5 +26,4 @@ export class BrandService {
   addBrand(brand: Brand): Observable<Brand>{
     return this.http.post<Brand>('http://localhost:3000/brand', brand)
   }
-  
 }

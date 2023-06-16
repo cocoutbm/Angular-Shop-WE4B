@@ -149,12 +149,19 @@
       "id": 8
     },
     {
+      "userId": 6,
       "productId": 1,
       "id": 9
     },
     {
+      "userId": 6,
       "productId": 1,
       "id": 10
+    },
+    {
+      "userId": 6,
+      "productId": 1,
+      "id": 11
     }
   ],
   "brand": [

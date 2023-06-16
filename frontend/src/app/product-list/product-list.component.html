@@ -1,22 +1,26 @@
 <br>
 <div>
-    <div>
-      <button type="button" class="btn btn-outline-primary" *ngFor="let b of brand" (click)='FilterbyBrand(b)'>{{b.name}}</button>
-    </div> 
 
-<!-- 
-    <select #cricket (change)="update()">
-      <option *ngFor="let b of brand" [value]="b">
-          {{b.name}}
-      </option>
-    </select>
-     
-    <input type="text" name="search" [(ngModel)]="searchText" placeholder="Search by name or brand">
--->  
-</div>
+  <div>
+    <button type="button" class="btn btn-outline-primary" *ngFor="let b of brand" (click)='FilterbyBrand(b)'>{{b.name}}</button>
+  </div> 
+
+<!--
+  <select class="form-select" onChange="FilterbyBrand($event)">
+    <option *ngFor="let b of brand" [value]="b">
+      {{b.name}}
+    </option>
+  </select>
+  <input type="text" name="search" [(ngModel)]="searchText" placeholder="Search by name or brand">
+ --> 
 <br><br>
+
+</div>
+
 <div class="center container d-flex justify-content-center">
+  
   <div class="row">
+    
     <ng-container *ngFor="let product of products; let i = index">
       <div class="col-md-6 mb-4">
         <app-product [product]="product" [prd_idx]="i"></app-product>
