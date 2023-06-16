@@ -3,6 +3,7 @@ import { Injectable } from '@angular/core';
 import { Observable} from 'rxjs';
 import { Product } from '../models/product';
 import { Cart } from '../models/cart';
+import { Brand } from '../models/brand';
 
 @Injectable({
   providedIn: 'root'
@@ -50,6 +51,10 @@ export class ProductService {
 
   addProduct(product : Product): Observable<Product>{
     return this.http.post<Product>('http://localhost:3000/product', product)
+  }
+
+  getDatabyBrand(brand: Brand): Observable<Product[]> {
+    return this.http.get<Product[]>('http://localhost:3000/product?brand='+ brand.name)
   }
 
   getCartDataLength(){

@@ -15,6 +15,7 @@ import { User } from '../models/user';
 export class ProductComponent implements OnInit{
 
   @Input() product! : Product
+  @Input() prd_idx! : number
   cart! : Cart
 
   constructor (private routeur: Router, private productService: ProductService,private userService: UserService){

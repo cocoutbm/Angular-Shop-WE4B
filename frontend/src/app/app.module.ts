@@ -20,6 +20,7 @@ import { VendreComponent } from './vendre/vendre.component';
 import { FilterPipe } from './filter.pipe';
 
 
+
 @NgModule({
   declarations: [
     AppComponent,

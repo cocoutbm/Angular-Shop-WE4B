@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Product } from '../models/product';
 import { ProductService } from '../services/product.service';
+import { Brand } from '../models/brand';
+import { BrandService } from '../services/brand.service';
 
 
 @Component({
@@ -12,10 +14,15 @@ import { ProductService } from '../services/product.service';
 export class ProductListComponent implements OnInit {
   searchText:any;
   products: Product[] = [];
+  brand : Brand[] = [];
 
-  constructor(private productService: ProductService) {
+  constructor(private productService: ProductService, private brandService: BrandService) {
     this.productService.getProducts().subscribe(data => {
       this.products = data
+    })
+
+    this.brandService.getData().subscribe(data => {
+      this.brand = data
     })
   }
 
@@ -24,4 +31,18 @@ export class ProductListComponent implements OnInit {
   addToCart(product: Product) {
     console.log('Produit ajouté au panier :', product);
   }
+
+  FilterbyBrand(brand: Brand) {
+    if(brand.name!= 'ALL')
+      this.productService.getDatabyBrand(brand).subscribe(data=>{
+      this.products = data
+    })
+    else
+      this.productService.getProducts().subscribe(data=>{
+      this.products= data
+    })
+  }
+
+  
+
 }

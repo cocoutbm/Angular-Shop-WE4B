@@ -147,6 +147,32 @@
       "userId": 2,
       "productId": 1,
       "id": 8
+    },
+    {
+      "productId": 1,
+      "id": 9
+    },
+    {
+      "productId": 1,
+      "id": 10
+    }
+  ],
+  "brand": [
+    {
+      "id": 0,
+      "name": "ALL"
+    },
+    {
+      "id": 1,
+      "name": "Apple"
+    },
+    {
+      "id": 2,
+      "name": "Samsung"
+    },
+    {
+      "id": 3,
+      "name": "HP"
     }
   ]
 }
