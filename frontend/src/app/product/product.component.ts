@@ -19,17 +19,20 @@ export class ProductComponent implements OnInit{
   cart! : Cart
 
   constructor (private routeur: Router, private productService: ProductService,private userService: UserService){
+    
   }
 
-  ngOnInit(): void {
-      this.productService.getCartDataLength()
-      this.cart = new Cart(this.productService.cart_length, this.userService.user_id, this.product.id)
-  }
+  ngOnInit(){}
 
-  addToCart() {
-      this.productService.addToCart(this.cart).subscribe(data => {
-        this.cart = data
-      })
+  addToCart(): void {
+    this.productService.getCartDataLength()
+    this.productService.getIdByUserId(this.userService.user_id, this.product.id)
+    
+    this.cart = new Cart(this.productService.cart_id, this.userService.user_id, this.product.id)
+
+    this.productService.addToCart(this.cart).subscribe(data => {
+      this.cart = data
+    })
   }
   
   readMore(){

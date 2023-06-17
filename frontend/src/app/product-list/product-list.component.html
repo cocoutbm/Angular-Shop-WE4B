@@ -1,17 +1,22 @@
+<body ng-controller="empCtrl">
 <br>
 <div>
 
-<!-- 
-  <div>
+ 
     <button type="button" class="btn btn-outline-primary" *ngFor="let b of brand" (click)='FilterbyBrand(b)'>{{b.name}}</button>
-  </div> 
-  <select class="form-select" onChange="FilterbyBrand($event)">
+
+  <div>  
+ <!--   
+  <select [(ngModel)]="query">
     <option *ngFor="let b of brand" [value]="b">
       {{b.name}}
     </option>
   </select>
-  <input type="text" name="search" [(ngModel)]="searchText" placeholder="Search by name or brand">
---> 
+
+  <input type="text" name="search" [(ngModel)]="queryBy" placeholder="Search">
+-->  
+</div>   
+
 <br><br>
 
 </div>
@@ -28,3 +33,4 @@
   </div>
 </div>
 
+</body>

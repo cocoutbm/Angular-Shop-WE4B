@@ -26,7 +26,8 @@ export class ProductListComponent implements OnInit {
     })
   }
 
-  ngOnInit() {}
+  ngOnInit() {
+  }
 
   addToCart(product: Product) {
     console.log('Produit ajouté au panier :', product);
@@ -36,10 +37,12 @@ export class ProductListComponent implements OnInit {
     if(brand.name!= 'ALL')
       this.productService.getDatabyBrand(brand).subscribe(data=>{
       this.products = data
-    })
+      }
+    )
     else
       this.productService.getProducts().subscribe(data=>{
       this.products= data
-    })
+      }
+    )
   }
 }

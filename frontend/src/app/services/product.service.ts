@@ -14,6 +14,7 @@ export class ProductService {
   private products: Product[] = [];
   list_length! : number
   cart_length! : number
+  cart_id! : number
 
   constructor(private http: HttpClient) { }
 
@@ -38,10 +39,13 @@ export class ProductService {
   getProductById(id: number): Observable<Product> {
     return this.http.get<Product>('http://localhost:3000/product/' + id);
   }
+
+  getIdByUserId(user_id:number, productId:number) {
+    return this.http.get<Cart>('http://localhost:3000/cart?userId='+user_id +'&productId='+productId).subscribe(data=>{this.cart_id=data.id})
+  }
   
   addToCart(cart: Cart): Observable<Cart> {
-    console.log(cart)
-    return this.http.post<Cart>('http://localhost:3000/cart', cart);
+    return this.http.post<Cart>('http://localhost:3000/cart', cart)
   }
 
   getDataLength(){
@@ -60,7 +64,7 @@ export class ProductService {
     })
   }
 
-  getDatabyBrand(brand: Brand): Observable<Product[]> {
+  getDatabyBrand(brand: Brand) {
     return this.http.get<Product[]>('http://localhost:3000/product?brand='+ brand.name)
   }
   
