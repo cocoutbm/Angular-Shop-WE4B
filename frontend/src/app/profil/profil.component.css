@@ -1,19 +1,15 @@
-#profil-info {
-    margin: 0;
-    width: 75%;
+.card {
+    width: 350px;
+    margin: auto;
+    margin-top: 50px;
 }
 
-.profil-info-perso {
-    margin-top: 15px;
-    margin-bottom: 30px;
-    margin-left: 15px;
-    margin-right: 0;
-    width: 75%;
+.card li{
+    height: 50px;
 }
 
-#bouton-vendre {
-    position: absolute;
-    left: 90%;
+.card-header{
+    text-align: center;
+    font-weight: bold;
+    background-color: rgba(159, 155, 155, 0.65);
 }
-
-
