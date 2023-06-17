@@ -1,20 +1,19 @@
 <body ng-controller="empCtrl">
 <br>
 <div>
-
- 
-    <button type="button" class="btn btn-outline-primary" *ngFor="let b of brand" (click)='FilterbyBrand(b)'>{{b.name}}</button>
-
+  <button type="button" class="btn btn-outline-primary" *ngFor="let b of brands" (click)='FilterbyBrand(b)'>{{b.name}}</button>
   <div>  
- <!--   
-  <select [(ngModel)]="query">
-    <option *ngFor="let b of brand" [value]="b">
+    
+  <select class="form-control" (change)="onChange(selectBrand)">
+    <option *ngFor="let b of brands" [value]="b" >
       {{b.name}}
     </option>
   </select>
 
+<!--
   <input type="text" name="search" [(ngModel)]="queryBy" placeholder="Search">
 -->  
+
 </div>   
 
 <br><br>

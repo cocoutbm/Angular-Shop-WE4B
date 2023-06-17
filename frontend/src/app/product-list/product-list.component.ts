@@ -14,7 +14,8 @@ import { BrandService } from '../services/brand.service';
 export class ProductListComponent implements OnInit {
   searchText:any;
   products: Product[] = [];
-  brand : Brand[] = [];
+  selectBrand!: Brand;
+  brands : Brand[] = [];
 
   constructor(private productService: ProductService, private brandService: BrandService) {
     this.productService.getProducts().subscribe(data => {
@@ -22,7 +23,8 @@ export class ProductListComponent implements OnInit {
     })
 
     this.brandService.getData().subscribe(data => {
-      this.brand = data
+      this.brands = data
+      this.selectBrand=data[0]
     })
   }
 
@@ -44,5 +46,9 @@ export class ProductListComponent implements OnInit {
       this.products= data
       }
     )
+  }
+
+  onChange(selectedBrand: Brand) {
+    this.FilterbyBrand(selectedBrand);
   }
 }
