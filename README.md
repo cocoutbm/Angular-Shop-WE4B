@@ -11,9 +11,9 @@ Corentin Durupt, Simon Illouz, Laurent Arnaud Planchin et Aubin Bonnefoy.
 
 2. Installation des dépendances du frontend :
    - Ouvrez un terminal et accédez au répertoire du projet "Angular-Shop-WE4B"
-   '''  
-   cd .\frontend\
-   '''
+     ```
+     cd .\frontend\
+     ```
    - Exécutez la commande suivante pour installer les dépendances nécessaires :
      ```
      npm install
