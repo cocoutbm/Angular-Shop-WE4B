@@ -3,12 +3,6 @@
 Ce guide vous expliquera comment installer et exécuter notre projet WE4B, un site de marketplace pour objets technologiques.
 Corentin Durupt, Simon Illouz, Laurent Arnaud Planchin et Aubin Bonnefoy.
 
-## Prérequis
-Assurez-vous d'avoir les éléments suivants installés sur votre machine :
-- Node.js (version 12 ou supérieure)
-- Angular CLI (Command Line Interface)
-- json-server
-
 ## Étapes d'installation
 
 1. Téléchargement et extraction du projet :
