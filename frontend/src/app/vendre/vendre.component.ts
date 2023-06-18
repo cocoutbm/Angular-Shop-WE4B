@@ -27,6 +27,7 @@ export class VendreComponent implements OnInit{
   }
 
   addProduct(): void{
+    this.product.image = this.product.image.replace("C:\\fakepath\\", "../assets/images-produits/")
     this.productService.addProduct(this.product).subscribe(data => {
       this.product = data
     })

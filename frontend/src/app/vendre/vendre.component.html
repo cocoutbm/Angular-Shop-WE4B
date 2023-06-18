@@ -6,7 +6,7 @@
   
           <div class="mb-3">
             <label for="product-name">Nom du produit :</label>
-            <input type="text" class="form-control" id="product-name" [(ngModel)]="product.name" placeholder="Entrez le nom du produit" />
+            <input type="text" class="form-control" id="product-name" [(ngModel)]="product.name" name="name" placeholder="Entrez le nom du produit" />
           </div>
   
           <div class="mb-3">
@@ -21,12 +21,12 @@
   
           <div class="mb-3">
             <label for="product-image" class="form-label">Image</label>
-            <input type="file" class="form-control" id="product-image" placeholder="Sélectionnez une image">
+            <input type="file" class="form-control" id="product-image" [(ngModel)]="product.image" name="image" placeholder="Sélectionnez une image">
           </div>
   
           <div class="mb-3">
             <label for="product-name" class="form-label">Stock Disponible</label>
-            <input type="number" class="form-control" id="product-name" [(ngModel)]="product.stock" name="name" placeholder="Entrez le nom du produit">
+            <input type="number" class="form-control" id="product-name" [(ngModel)]="product.stock" name="stock" placeholder="Entrez le nom du produit">
           </div>
   
           <div class="mb-3">
