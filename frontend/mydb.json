@@ -172,6 +172,16 @@
       "userId": 6,
       "productId": 1,
       "id": 13
+    },
+    {
+      "userId": 6,
+      "productId": 3,
+      "id": 14
+    },
+    {
+      "userId": 6,
+      "productId": 5,
+      "id": 15
     }
   ],
   "brand": [

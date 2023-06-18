@@ -14,17 +14,16 @@ import { BrandService } from '../services/brand.service';
 export class ProductListComponent implements OnInit {
   searchText:any;
   products: Product[] = [];
-  selectBrand!: Brand;
   brands : Brand[] = [];
+  visible: boolean = true;
 
   constructor(private productService: ProductService, private brandService: BrandService) {
     this.productService.getProducts().subscribe(data => {
-      this.products = data
+      this.products = data;
     })
 
     this.brandService.getData().subscribe(data => {
-      this.brands = data
-      this.selectBrand=data[0]
+      this.brands = data;
     })
   }
 
@@ -38,17 +37,21 @@ export class ProductListComponent implements OnInit {
   FilterbyBrand(brand: Brand) {
     if(brand.name!= 'ALL')
       this.productService.getDatabyBrand(brand).subscribe(data=>{
-      this.products = data
+      this.products = data;
       }
     )
     else
       this.productService.getProducts().subscribe(data=>{
-      this.products= data
+      this.products= data;
       }
     )
   }
 
-  onChange(selectedBrand: Brand) {
-    this.FilterbyBrand(selectedBrand);
+  Afficher(){
+    if(this.visible){
+      this.visible= false;
+    } else {
+      this.visible = true;
+    }
   }
 }

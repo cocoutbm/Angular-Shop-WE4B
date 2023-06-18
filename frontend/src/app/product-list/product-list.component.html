@@ -1,29 +1,20 @@
-<body ng-controller="empCtrl">
+<body>
 <br>
-<div>
-  <button type="button" class="btn btn-outline-primary" *ngFor="let b of brands" (click)='FilterbyBrand(b)'>{{b.name}}</button>
-  <div>  
-    
-  <select class="form-control" (change)="onChange(selectBrand)">
-    <option *ngFor="let b of brands" [value]="b" >
-      {{b.name}}
-    </option>
-  </select>
 
-<!--
-  <input type="text" name="search" [(ngModel)]="queryBy" placeholder="Search">
--->  
-
-</div>   
-
-<br><br>
+<button class="btn btn-outline-primary center container d-flex justify-content-center" type="button" (click)='Afficher()'>Filtre par Marque</button>
+<br>
+<div class="center container d-flex justify-content-center">
+  
+  <div [hidden]=visible>  
+    <button type="button" class="btn btn-outline-primary" *ngFor="let b of brands" (click)='FilterbyBrand(b)'>{{b.name}}</button>
+  </div> 
 
 </div>
 
+<br><br>
+
 <div class="center container d-flex justify-content-center">
-  
   <div class="row">
-    
     <ng-container *ngFor="let product of products; let i = index">
       <div class="col-md-6 mb-4">
         <app-product [product]="product" [prd_idx]="i"></app-product>
