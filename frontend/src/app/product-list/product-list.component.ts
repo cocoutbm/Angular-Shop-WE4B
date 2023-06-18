@@ -30,7 +30,7 @@ export class ProductListComponent implements OnInit {
 
     this.brandService.getData().subscribe(data => {
       this.brands = data;
-      this.selectedBrand = data[1];
+      this.selectedBrand = data[0];
     })
 
     this.categoryService.getData().subscribe(data => {
