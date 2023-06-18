@@ -4,6 +4,7 @@ import { Observable} from 'rxjs';
 import { Product } from '../models/product';
 import { Cart } from '../models/cart';
 import { Brand } from '../models/brand';
+import { Category } from '../models/category';
 
 @Injectable({
   providedIn: 'root'
@@ -64,8 +65,19 @@ export class ProductService {
     })
   }
 
-  getDatabyBrand(brand: Brand) {
-    return this.http.get<Product[]>('http://localhost:3000/product?brand='+ brand.name)
+  getDatabyFilter(brand: Brand,category : Category) {
+    if(category.name !='ALL'){
+      if(brand.name!='ALL'){
+        return this.http.get<Product[]>('http://localhost:3000/product?brand='+ brand.name+'&category='+category.name)
+      } else {
+        return this.http.get<Product[]>('http://localhost:3000/product?category='+category.name)
+      }
+    } else {
+      if(brand.name!='ALL'){
+        return this.http.get<Product[]>('http://localhost:3000/product?brand='+ brand.name)
+      } else {
+        return this.http.get<Product[]>('http://localhost:3000/product')
+      }
+    }
   }
-  
 }

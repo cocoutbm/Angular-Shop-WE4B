@@ -1,13 +1,40 @@
 <body>
 <br>
 
-<button class="btn btn-outline-primary center container d-flex justify-content-center" type="button" (click)='Afficher()'>Filtre par Marque</button>
+<table>
+  <tr align ="center">
+    <td><button  class="btn btn-outline-primary justify-content-center" type="buttonFilter" (click)='AfficherFiltreBrand()'>Filtre par Marque</button></td>
+  </tr>
+  <tr align ="center">
+    <td>
+      <div [hidden]=visibleBrd>  
+        <th *ngFor="let b of brands" >
+          <button type="button" class="btn btn-outline-primary justify-content-center" (click)='FilterbyBrand(b)'>{{b.name}}</button>
+        </th>
+      </div> 
+    </td>
+  </tr>
+  <br>
+  <tr align="center">
+    <td  ><button class="btn btn-outline-primary justify-content-center" type="buttonFilter" (click)='AfficherFiltreCategory()'>Filtre par Category</button></td>
+  </tr>
+  <tr align ="center">  
+    <td>
+      <div [hidden]=visibleCat> 
+        <th *ngFor="let c of categorys">
+          <button type="button" class="btn btn-outline-primary justify-content-center" (click)='FilterbyCategory(c)'>{{c.name}}</button>
+        </th>
+      </div> 
+    </td>
+  </tr>
+    
+</table>
+
+
 <br>
 <div class="center container d-flex justify-content-center">
   
-  <div [hidden]=visible>  
-    <button type="button" class="btn btn-outline-primary" *ngFor="let b of brands" (click)='FilterbyBrand(b)'>{{b.name}}</button>
-  </div> 
+  
 
 </div>
 

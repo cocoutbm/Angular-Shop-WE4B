@@ -105,6 +105,26 @@
       "brand": "HP",
       "stock": 599,
       "price": 1299
+    },
+    {
+      "id": 6,
+      "category": "Carte Graphique",
+      "description": "Carte Graphique Nouvelle génération ",
+      "image": "../assets/images-produits/geforce-ada-4090-web-og-1200x630.jpg",
+      "name": "GeForce 4090 RTX",
+      "brand": "Nvidia",
+      "stock": 10,
+      "price": 1769
+    },
+    {
+      "id": 7,
+      "category": "Console",
+      "description": "Console de Jeu Nintendo ",
+      "image": "../assets/images-produits/nintendo-switch.png",
+      "name": "Nintendo Switch",
+      "brand": "Nintendo",
+      "stock": 20,
+      "price": 359.99
     }
   ],
   "cart": [
@@ -160,28 +180,13 @@
     },
     {
       "userId": 6,
-      "productId": 4,
+      "productId": 2,
       "id": 11
     },
     {
       "userId": 6,
-      "productId": 5,
-      "id": 12
-    },
-    {
-      "userId": 6,
-      "productId": 1,
-      "id": 13
-    },
-    {
-      "userId": 6,
       "productId": 3,
-      "id": 14
-    },
-    {
-      "userId": 6,
-      "productId": 5,
-      "id": 15
+      "id": 12
     }
   ],
   "brand": [
@@ -200,6 +205,40 @@
     {
       "id": 3,
       "name": "HP"
+    },
+    {
+      "id": 4,
+      "name": "Nvidia"
+    },
+    {
+      "id": 5,
+      "name": "Nintendo"
+    }
+  ],
+  "category": [
+    {
+      "id": 0,
+      "name": "ALL"
+    },
+    {
+      "id": 1,
+      "name": "Smartphone"
+    },
+    {
+      "id": 2,
+      "name": "Ordinateur portable"
+    },
+    {
+      "id": 3,
+      "name": "Tablette"
+    },
+    {
+      "id": 3,
+      "name": "Carte Graphique"
+    },
+    {
+      "id": 4,
+      "name": "Console"
     }
   ]
 }

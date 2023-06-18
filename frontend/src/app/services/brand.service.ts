@@ -1,9 +1,7 @@
 import { Injectable, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
-import { User } from '../models/user';
 import { Brand } from '../models/brand';
-import { Product } from '../models/product';
 
 
 @Injectable({

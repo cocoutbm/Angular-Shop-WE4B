@@ -3,6 +3,8 @@ import { Product } from '../models/product';
 import { ProductService } from '../services/product.service';
 import { Brand } from '../models/brand';
 import { BrandService } from '../services/brand.service';
+import { Category } from '../models/category';
+import { CategoryService } from '../services/category.service';
 
 
 @Component({
@@ -15,15 +17,25 @@ export class ProductListComponent implements OnInit {
   searchText:any;
   products: Product[] = [];
   brands : Brand[] = [];
-  visible: boolean = true;
+  categorys : Category[] = [];
+  selectedBrand!: Brand;
+  selectedCategory!: Category;
+  visibleBrd: boolean = true;
+  visibleCat: boolean = true;
 
-  constructor(private productService: ProductService, private brandService: BrandService) {
+  constructor(private productService: ProductService, private brandService: BrandService, private categoryService: CategoryService) {
     this.productService.getProducts().subscribe(data => {
       this.products = data;
     })
 
     this.brandService.getData().subscribe(data => {
       this.brands = data;
+      this.selectedBrand = data[1];
+    })
+
+    this.categoryService.getData().subscribe(data => {
+      this.categorys = data;
+      this.selectedCategory = data[0];
     })
   }
 
@@ -35,23 +47,33 @@ export class ProductListComponent implements OnInit {
   }
 
   FilterbyBrand(brand: Brand) {
-    if(brand.name!= 'ALL')
-      this.productService.getDatabyBrand(brand).subscribe(data=>{
-      this.products = data;
-      }
-    )
-    else
-      this.productService.getProducts().subscribe(data=>{
-      this.products= data;
-      }
-    )
+    this.selectedBrand = brand;
+    this.productService.getDatabyFilter(brand,this.selectedCategory).subscribe(data=>{
+    this.products = data;
+    })
   }
 
-  Afficher(){
-    if(this.visible){
-      this.visible= false;
+  FilterbyCategory(category: Category) {
+    this.selectedCategory = category;
+    this.productService.getDatabyFilter(this.selectedBrand,category).subscribe(data=>{
+    this.products = data;
+    })
+  
+  }
+
+  AfficherFiltreBrand(){
+    if(this.visibleBrd){
+      this.visibleBrd= false;
     } else {
-      this.visible = true;
+      this.visibleBrd = true;
+    }
+  }
+
+  AfficherFiltreCategory(){
+    if(this.visibleCat){
+      this.visibleCat= false;
+    } else {
+      this.visibleCat = true;
     }
   }
 }
