@@ -1,6 +1,7 @@
 # Projet WE4B - Site Hi-tech - Guide d'installation
 
-Ce guide vous expliquera comment installer et exécuter notre projet WE4B, un site de marketplace pour objets technologiques. Notre équipe de développement est composée de Corentin Durupt, Simon Illouz, Laurent Arnaud Planchin et Aubin Bonnefoy.
+Ce guide vous expliquera comment installer et exécuter notre projet WE4B, un site de marketplace pour objets technologiques.
+Corentin Durupt, Simon Illouz, Laurent Arnaud Planchin et Aubin Bonnefoy.
 
 ## Prérequis
 Assurez-vous d'avoir les éléments suivants installés sur votre machine :
