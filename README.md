@@ -29,9 +29,9 @@ Corentin Durupt, Simon Illouz, Laurent Arnaud Planchin et Aubin Bonnefoy.
 4. Lancement du serveur de base de données (json-server) :
    - Ouvrez un autre terminal.
    - accédez au répertoire du projet "Angular-Shop-WE4B"
-     '''  
+     ```
      cd .\frontend\
-     '''
+     ```
    - Exécutez la commande suivante pour lancer le serveur de base de données :
      ```
      json-server --watch mydb.json
